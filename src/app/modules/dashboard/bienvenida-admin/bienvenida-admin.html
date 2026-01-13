@@ -1,34 +1,15 @@
-<div class="admin-layout">
-<!-- Sidebar -->
-    <aside class="sidebar">
-        <h4 class="brand">Administrador</h4>
+<div class="admin-container">
+  <h1>Panel de Control: Bienvenido Admin</h1>
+  
+  <nav>
+    <button routerLink="cambiar-rol">Gestionar Roles</button>
+    <button routerLink="desactivar-usuario">Bajas de Usuarios</button>
+    <button routerLink="/login">Cerrar Sesión</button>
+  </nav>
 
-        <nav>
-        <a routerLink="/admin/cambiar-rol" routerLinkActive="active">
-            <i class="bi bi-people"></i> Editar Roles de Usuarios
-        </a>
+  <hr>
 
-        <a routerLink="/admin/desactivar-usuario" routerLinkActive="active">
-            <i class="bi bi-person-check"></i> Desactivar Usuarios
-        </a>
-
-        <a routerLink="/admin/otra-opcion" routerLinkActive="active">
-            <i class="bi bi-gear"></i> Otra opción
-        </a>
-        </nav>
-    </aside>
-
-    <!-- Main content -->
-    <main class="main">
-        <header class="topbar">
-        <h3>Panel de Administración</h3>
-        <button class="btn btn-outline-danger btn-sm" (click)="cerrarSesion()">
-            Cerrar sesión
-        </button>
-        </header>
-
-        <section class="content">
-        <router-outlet></router-outlet>
-        </section>
-    </main>
+  <div class="content-area">
+    <router-outlet></router-outlet>
+  </div>
 </div>

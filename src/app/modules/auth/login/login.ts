@@ -1,6 +1,6 @@
-import { AuthService } from './../../../services/auth'; // Asegúrate de que diga AuthService
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'; 
+import { AuthService } from './../../../services/auth'; 
 
 @Component({
   selector: 'app-login',
@@ -12,36 +12,46 @@ export class Login {
   email: string = '';
   password: string = '';
 
-  // Cambiamos Auth por AuthService aquí también
   constructor(private authService: AuthService, private router: Router) {}
 
-  // Renombramos login por ingresar
   ingresar() {
-    this.authService
-      .login(this.email, this.password)
+    this.authService.login(this.email, this.password)
       .then((cred) => {
         const uid = cred.user?.uid || '';
+        
+        // Aquí pedimos los datos a Firestore y los mostramos
         this.authService.ObtenerUsuario(uid).subscribe((usuario: any) => {
-          console.log('Usuario', usuario);
-          if (usuario.rol === "admin") {
+          
+          // ESTO ES LO QUE EXTRAÑABAS: Ver los datos en consola
+          console.log('--- USUARIO IDENTIFICADO ---');
+          console.log('ID:', uid);
+          console.log('Datos completos:', usuario);
+          
+          if (usuario && usuario.rol === "admin") {
+            console.log('Accediendo como ADMINISTRADOR');
             this.router.navigate(['/admin']);
           } else {
+            console.log('Accediendo como USUARIO ESTÁNDAR');
             this.router.navigate(['/usuario']);
           }
         });
       })
       .catch((error) => {
         console.error('Error en login: ', error);
+        alert('Error al ingresar: Revisa tus credenciales.');
       });
   }
 
-  // Esta es la función que te faltaba para el otro botón del HTML
   registrar() {
     this.authService.registrar(this.email, this.password)
-      .then(() => {
-        console.log('Usuario registrado con éxito');
+      .then((res) => {
+        // También ponemos consola aquí para el registro
+        console.log('Nuevo usuario registrado:', res.user?.email);
+        alert('Usuario registrado con éxito');
       })
-      .catch(err => console.error(err));
+      .catch(err => {
+        console.error('Error al registrar:', err);
+      });
   }
 
   irRegistrar() {
