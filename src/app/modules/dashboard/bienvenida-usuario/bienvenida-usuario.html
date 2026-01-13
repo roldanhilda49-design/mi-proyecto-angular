@@ -1,4 +1,161 @@
-<div class="contenedor-centro">
-  <h1>Bienvenido Usuario</h1>
-  <button (click)="salir()" class="btn-salir">Regresar al Login</button>
+<div class="cyberpunk-container fullscreen">
+  <!-- Efectos de fondo -->
+  <div class="cyber-grid"></div>
+  <div class="cyber-particles"></div>
+  <div class="connection-lines"></div>
+  
+  <!-- Contenedor principal -->
+  <div class="main-terminal">
+    <!-- Efectos de borde -->
+    <div class="terminal-glow"></div>
+    <div class="scanline"></div>
+    
+    <!-- Cabecera del terminal -->
+    <div class="terminal-header">
+      <div class="header-title">
+        <span class="corp-name">NEXUS</span>
+        <span class="corp-slogan">ACCESS GRANTED</span>
+      </div>
+      <div class="header-status">
+        <div class="status-dots">
+          <div class="dot green active"></div>
+          <div class="dot green active"></div>
+          <div class="dot green active"></div>
+        </div>
+        <div class="timestamp" id="live-time">[--:--:--]</div>
+      </div>
+    </div>
+    
+    <!-- Contenido principal -->
+    <div class="welcome-content">
+      <div class="welcome-panel">
+        <!-- Efecto de acceso concedido -->
+        <div class="access-granted">
+          <div class="granted-text">ACCESS</div>
+          <div class="granted-text">GRANTED</div>
+          <div class="granted-subtitle">WELCOME TO THE SYSTEM</div>
+        </div>
+        
+        <!-- Información del usuario -->
+        <div class="user-info-panel">
+          <div class="user-avatar">
+            <div class="avatar-glow"></div>
+            <div class="avatar-icon">👤</div>
+            <div class="avatar-status"></div>
+          </div>
+          
+          <div class="user-details">
+            <h1 class="user-greeting">BIENVENIDO, <span class="user-name">USUARIO</span></h1>
+            <div class="user-stats">
+              <div class="stat-item">
+                <span class="stat-label">SESSION TIME</span>
+                <span class="stat-value" id="session-time">00:00:00</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">ACCESS LEVEL</span>
+                <span class="stat-value">ADMINISTRATOR</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">LAST LOGIN</span>
+                <span class="stat-value">TODAY 22:30:15</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Panel de sistema -->
+        <div class="system-panel">
+          <div class="panel-section">
+            <h3 class="section-title">SYSTEM STATUS</h3>
+            <div class="status-grid">
+              <div class="status-item online">
+                <div class="status-icon">🖥️</div>
+                <span class="status-name">MAIN SERVER</span>
+                <div class="status-indicator"></div>
+              </div>
+              <div class="status-item online">
+                <div class="status-icon">🔐</div>
+                <span class="status-name">SECURITY</span>
+                <div class="status-indicator"></div>
+              </div>
+              <div class="status-item online">
+                <div class="status-icon">🌐</div>
+                <span class="status-name">NETWORK</span>
+                <div class="status-indicator"></div>
+              </div>
+              <div class="status-item online">
+                <div class="status-icon">💾</div>
+                <span class="status-name">DATABASE</span>
+                <div class="status-indicator"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="panel-section">
+            <h3 class="section-title">QUICK ACTIONS</h3>
+            <div class="actions-grid">
+              <button class="cyber-action small">
+                <span class="action-icon">📊</span>
+                <span class="action-text">DASHBOARD</span>
+              </button>
+              <button class="cyber-action small">
+                <span class="action-icon">⚙️</span>
+                <span class="action-text">SETTINGS</span>
+              </button>
+              <button class="cyber-action small">
+                <span class="action-icon">👥</span>
+                <span class="action-text">USERS</span>
+              </button>
+              <button class="cyber-action small">
+                <span class="action-icon">📈</span>
+                <span class="action-text">REPORTS</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Botón de salir con el estilo original -->
+        <div class="botones-container">
+          <button (click)="salir()" class="btn-salir">
+            <span class="btn-content">
+              <span class="btn-text">Regresar al Login</span>
+              <span class="btn-icon">←</span>
+            </span>
+          </button>
+        </div>
+        
+        <!-- Mensajes del sistema -->
+        <div class="system-messages">
+          <div class="message-header">SYSTEM MESSAGES</div>
+          <div class="messages-list">
+            <div class="message-item">
+              <span class="message-time">[22:47:45]</span>
+              <span class="message-text">User session successfully established</span>
+            </div>
+            <div class="message-item">
+              <span class="message-time">[22:47:48]</span>
+              <span class="message-text">All systems operational</span>
+            </div>
+            <div class="message-item">
+              <span class="message-time">[22:47:50]</span>
+              <span class="message-text">Welcome to Nexus Control Panel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer del terminal -->
+    <div class="terminal-footer">
+      <div class="footer-left">
+        <span class="footer-text">NEXUS CONTROL PANEL v3.7.2</span>
+        <span class="footer-separator">|</span>
+        <span class="footer-text">SESSION ACTIVE</span>
+      </div>
+      <div class="footer-right">
+        <span class="footer-text" id="session-counter">SESSION: 0001</span>
+        <span class="footer-sign">✓</span>
+      </div>
+    </div>
+  </div>
 </div>
