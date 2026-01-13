@@ -1,0 +1,41 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+input {
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.botones-container {
+  display: flex;
+  gap: 10px; /* Espacio entre botones */
+  justify-content: space-between;
+}
+
+button {
+  flex: 1; /* Para que midan lo mismo */
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-ingresar {
+  background-color: #28a745; /* Verde */
+}
+
+.btn-registrar {
+  background-color: #007bff; /* Azul */
+}

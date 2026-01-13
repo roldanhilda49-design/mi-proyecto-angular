@@ -1,0 +1,14 @@
+<div class="login-container">
+  <h2>Inicio de Sesión</h2>
+  
+  <label>Correo:</label>
+  <input type="email" [(ngModel)]="email" placeholder="ejemplo@correo.com">
+  
+  <label>Contraseña:</label>
+  <input type="password" [(ngModel)]="password" placeholder="********">
+
+  <div class="botones-container">
+    <button (click)="ingresar()" class="btn-ingresar">Ingresar</button>
+    <button (click)="registrar()" class="btn-registrar">Registrar</button>
+  </div>
+</div>
