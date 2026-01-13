@@ -1,25 +1,79 @@
-<div class="login-container">
-  <h2>Inicio de Sesión</h2>
-  
-  <label>Correo:</label>
-  <input type="email" [(ngModel)]="email" placeholder="ejemplo@correo.com">
-  
-  <label>Contraseña:</label>
-  <input type="password" [(ngModel)]="password" placeholder="********">
-
-  <div class="botones-container">
-    <button (click)="ingresar()" class="btn-ingresar">
-      <span class="btn-content">
-        <span class="btn-text">Ingresar</span>
-        <span class="btn-icon">→</span>
-      </span>
-    </button>
+<div class="cyberpunk-container">
+  <div class="neon-frame">
+    <div class="scanline"></div>
     
-    <button (click)="registrar()" class="btn-registrar">
-      <span class="btn-content">
-        <span class="btn-text">Registrar</span>
-        <span class="btn-icon">+</span>
-      </span>
-    </button>
+    <h2 class="cyberpunk-title">
+      <span class="glitch" data-text="ACCESO SEGURO">ACCESO SEGURO</span>
+      <span class="subtitle">SISTEMA DE IDENTIFICACIÓN</span>
+    </h2>
+    
+    <div class="input-field">
+      <div class="input-label">
+        <span class="label-text">CORREO ELECTRÓNICO:</span>
+        <div class="label-line"></div>
+      </div>
+      <div class="input-wrapper">
+        <div class="input-border"></div>
+        <input type="email" [(ngModel)]="email" placeholder="usuario@dominio.net">
+        <div class="input-underline"></div>
+        <div class="input-char-count" id="email-count">0/40</div>
+      </div>
+    </div>
+    
+    <div class="input-field">
+      <div class="input-label">
+        <span class="label-text">CONTRASEÑA:</span>
+        <div class="label-line"></div>
+      </div>
+      <div class="input-wrapper">
+        <div class="input-border"></div>
+        <input type="password" [(ngModel)]="password" placeholder="••••••••••••">
+        <div class="input-underline"></div>
+        <div class="input-char-count" id="password-count">0/20</div>
+      </div>
+      <div class="security-level">
+        <div class="security-bar">
+          <div class="security-fill"></div>
+        </div>
+        <span class="security-text">SEGURIDAD: BAJA</span>
+      </div>
+    </div>
+    
+    <div class="status-indicator">
+      <div class="status-led"></div>
+      <span class="status-text">SISTEMA ACTIVO</span>
+    </div>
+    
+    <div class="cyber-buttons">
+      <button (click)="ingresar()" class="cyber-btn primary">
+        <span class="btn-glow"></span>
+        <span class="btn-content">
+          <span class="btn-text">INGRESAR</span>
+          <span class="btn-icon">▶</span>
+        </span>
+        <div class="btn-corner top-left"></div>
+        <div class="btn-corner top-right"></div>
+        <div class="btn-corner bottom-left"></div>
+        <div class="btn-corner bottom-right"></div>
+      </button>
+      
+      <button (click)="registrar()" class="cyber-btn secondary">
+        <span class="btn-glow"></span>
+        <span class="btn-content">
+          <span class="btn-text">REGISTRAR</span>
+          <span class="btn-icon">⚙</span>
+        </span>
+        <div class="btn-corner top-left"></div>
+        <div class="btn-corner top-right"></div>
+        <div class="btn-corner bottom-left"></div>
+        <div class="btn-corner bottom-right"></div>
+      </button>
+    </div>
+    
+    <div class="terminal-output">
+      <div class="terminal-line">> Inicializando sistema de autenticación...</div>
+      <div class="terminal-line">> Protocolo de seguridad: ACTIVO</div>
+      <div class="terminal-line">> Esperando credenciales de usuario</div>
+    </div>
   </div>
 </div>
