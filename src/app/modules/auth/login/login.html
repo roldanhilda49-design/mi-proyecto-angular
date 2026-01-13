@@ -1,79 +1,228 @@
-<div class="cyberpunk-container">
-  <div class="neon-frame">
+<div class="cyberpunk-container fullscreen">
+  <!-- Grid de fondo animado -->
+  <div class="cyber-grid"></div>
+  
+  <!-- Efectos de partículas -->
+  <div class="cyber-particles"></div>
+  
+  <!-- Líneas de conexión -->
+  <div class="connection-lines"></div>
+  
+  <!-- Contenedor principal centrado -->
+  <div class="main-terminal">
+    <!-- Efectos de borde -->
+    <div class="terminal-glow"></div>
     <div class="scanline"></div>
     
-    <h2 class="cyberpunk-title">
-      <span class="glitch" data-text="ACCESO SEGURO">ACCESO SEGURO</span>
-      <span class="subtitle">SISTEMA DE IDENTIFICACIÓN</span>
-    </h2>
-    
-    <div class="input-field">
-      <div class="input-label">
-        <span class="label-text">CORREO ELECTRÓNICO:</span>
-        <div class="label-line"></div>
+    <!-- Cabecera del terminal -->
+    <div class="terminal-header">
+      <div class="header-title">
+        <span class="corp-name">NEXUS</span>
+        <span class="corp-slogan">CYBER SYSTEMS</span>
       </div>
-      <div class="input-wrapper">
-        <div class="input-border"></div>
-        <input type="email" [(ngModel)]="email" placeholder="usuario@dominio.net">
-        <div class="input-underline"></div>
-        <div class="input-char-count" id="email-count">0/40</div>
-      </div>
-    </div>
-    
-    <div class="input-field">
-      <div class="input-label">
-        <span class="label-text">CONTRASEÑA:</span>
-        <div class="label-line"></div>
-      </div>
-      <div class="input-wrapper">
-        <div class="input-border"></div>
-        <input type="password" [(ngModel)]="password" placeholder="••••••••••••">
-        <div class="input-underline"></div>
-        <div class="input-char-count" id="password-count">0/20</div>
-      </div>
-      <div class="security-level">
-        <div class="security-bar">
-          <div class="security-fill"></div>
+      <div class="header-status">
+        <div class="status-dots">
+          <div class="dot red active"></div>
+          <div class="dot yellow active"></div>
+          <div class="dot green active"></div>
         </div>
-        <span class="security-text">SEGURIDAD: BAJA</span>
+        <div class="timestamp">[22:47:30]</div>
       </div>
     </div>
     
-    <div class="status-indicator">
-      <div class="status-led"></div>
-      <span class="status-text">SISTEMA ACTIVO</span>
-    </div>
-    
-    <div class="cyber-buttons">
-      <button (click)="ingresar()" class="cyber-btn primary">
-        <span class="btn-glow"></span>
-        <span class="btn-content">
-          <span class="btn-text">INGRESAR</span>
-          <span class="btn-icon">▶</span>
-        </span>
-        <div class="btn-corner top-left"></div>
-        <div class="btn-corner top-right"></div>
-        <div class="btn-corner bottom-left"></div>
-        <div class="btn-corner bottom-right"></div>
-      </button>
+    <!-- Contenido del login -->
+    <div class="login-content">
+      <div class="access-panel">
+        <!-- Título con efecto matrix -->
+        <h1 class="matrix-title">
+          <span class="matrix-text">SYSTEM ACCESS</span>
+          <span class="matrix-subtitle">REQUIRED AUTHENTICATION</span>
+        </h1>
+        
+        <!-- Panel de credenciales -->
+        <div class="credentials-panel">
+          <div class="panel-header">
+            <span class="panel-title">CREDENTIALS VERIFICATION</span>
+            <div class="security-level">
+              <span class="level-text">SECURITY LEVEL: <span class="level-value">ALPHA</span></span>
+              <div class="level-indicator">
+                <div class="level-bar"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Campos de entrada -->
+          <div class="input-row">
+            <div class="input-container">
+              <div class="input-label">
+                <span class="label-icon">⌨</span>
+                <span>USER IDENTIFICATION</span>
+              </div>
+              <div class="cyber-input">
+                <div class="input-glow"></div>
+                <input type="email" [(ngModel)]="email" placeholder="ENTER CYBER-ID">
+                <div class="input-focus-line"></div>
+                <div class="input-hint">FORMAT: user@nexus.net</div>
+              </div>
+            </div>
+            
+            <div class="input-container">
+              <div class="input-label">
+                <span class="label-icon">🔒</span>
+                <span>ENCRYPTION KEY</span>
+              </div>
+              <div class="cyber-input">
+                <div class="input-glow"></div>
+                <input type="password" [(ngModel)]="password" placeholder="ENTER ENCRYPTION KEY">
+                <div class="input-focus-line"></div>
+                <div class="security-meter">
+                  <div class="meter-bar"></div>
+                  <span class="meter-text">ENCRYPTION: 64-BIT</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Botones de acción -->
+          <div class="action-row">
+            <button (click)="ingresar()" class="cyber-action-btn primary">
+              <div class="btn-cyber-effect"></div>
+              <span class="btn-text">INITIATE ACCESS</span>
+              <span class="btn-icon">▶</span>
+              <div class="btn-borders">
+                <div class="border-tl"></div>
+                <div class="border-tr"></div>
+                <div class="border-bl"></div>
+                <div class="border-br"></div>
+              </div>
+              <div class="btn-particles"></div>
+            </button>
+            
+            <button (click)="registrar()" class="cyber-action-btn secondary">
+              <div class="btn-cyber-effect"></div>
+              <span class="btn-text">NEW REGISTRATION</span>
+              <span class="btn-icon">+</span>
+              <div class="btn-borders">
+                <div class="border-tl"></div>
+                <div class="border-tr"></div>
+                <div class="border-bl"></div>
+                <div class="border-br"></div>
+              </div>
+              <div class="btn-particles"></div>
+            </button>
+            
+            <button class="cyber-action-btn ghost">
+              <span class="btn-text">RECOVER ACCESS</span>
+              <span class="btn-icon">?</span>
+            </button>
+          </div>
+          
+          <!-- Sistema de verificación -->
+          <div class="verification-system">
+            <div class="verification-header">
+              <span>SYSTEM VERIFICATION</span>
+              <div class="verification-status">
+                <div class="status-led"></div>
+                <span class="status-text">AWAITING INPUT</span>
+              </div>
+            </div>
+            
+            <div class="verification-codes">
+              <div class="code-segment">
+                <div class="code-number">01</div>
+                <div class="code-line active"></div>
+                <span class="code-text">IDENTITY SCAN</span>
+              </div>
+              <div class="code-segment">
+                <div class="code-number">02</div>
+                <div class="code-line"></div>
+                <span class="code-text">ENCRYPTION CHECK</span>
+              </div>
+              <div class="code-segment">
+                <div class="code-number">03</div>
+                <div class="code-line"></div>
+                <span class="code-text">ACCESS GRANT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       
-      <button (click)="registrar()" class="cyber-btn secondary">
-        <span class="btn-glow"></span>
-        <span class="btn-content">
-          <span class="btn-text">REGISTRAR</span>
-          <span class="btn-icon">⚙</span>
-        </span>
-        <div class="btn-corner top-left"></div>
-        <div class="btn-corner top-right"></div>
-        <div class="btn-corner bottom-left"></div>
-        <div class="btn-corner bottom-right"></div>
-      </button>
+      <!-- Panel lateral de información -->
+      <div class="side-panel">
+        <div class="system-log">
+          <div class="log-header">SYSTEM LOG</div>
+          <div class="log-content">
+            <div class="log-entry">
+              <span class="log-time">[22:47:15]</span>
+              <span class="log-text">System boot sequence initiated</span>
+            </div>
+            <div class="log-entry">
+              <span class="log-time">[22:47:20]</span>
+              <span class="log-text">Security protocols: ACTIVE</span>
+            </div>
+            <div class="log-entry">
+              <span class="log-time">[22:47:25]</span>
+              <span class="log-text">Network connection: STABLE</span>
+            </div>
+            <div class="log-entry">
+              <span class="log-time">[22:47:28]</span>
+              <span class="log-text">Awaiting user authentication</span>
+            </div>
+            <div class="log-entry highlight">
+              <span class="log-time">[22:47:30]</span>
+              <span class="log-text">>> ACCESS PANEL ACTIVATED</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="system-stats">
+          <div class="stats-header">SYSTEM STATUS</div>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-label">CPU LOAD</span>
+              <div class="stat-bar">
+                <div class="stat-fill" style="width: 45%"></div>
+              </div>
+              <span class="stat-value">45%</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">MEMORY</span>
+              <div class="stat-bar">
+                <div class="stat-fill" style="width: 68%"></div>
+              </div>
+              <span class="stat-value">68%</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">NETWORK</span>
+              <div class="stat-bar">
+                <div class="stat-fill" style="width: 32%"></div>
+              </div>
+              <span class="stat-value">32%</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">SECURITY</span>
+              <div class="stat-bar">
+                <div class="stat-fill" style="width: 92%"></div>
+              </div>
+              <span class="stat-value">92%</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     
-    <div class="terminal-output">
-      <div class="terminal-line">> Inicializando sistema de autenticación...</div>
-      <div class="terminal-line">> Protocolo de seguridad: ACTIVO</div>
-      <div class="terminal-line">> Esperando credenciales de usuario</div>
+    <!-- Footer del terminal -->
+    <div class="terminal-footer">
+      <div class="footer-left">
+        <span class="footer-text">NEXUS CYBER SYSTEMS v3.7.2</span>
+        <span class="footer-separator">|</span>
+        <span class="footer-text">ALL ACCESS MONITORED</span>
+      </div>
+      <div class="footer-right">
+        <span class="footer-text">UNAUTHORIZED ACCESS PROHIBITED</span>
+        <span class="warning-sign">⚠</span>
+      </div>
     </div>
   </div>
 </div>
