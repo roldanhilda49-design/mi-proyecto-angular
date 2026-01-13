@@ -8,7 +8,18 @@
   <input type="password" [(ngModel)]="password" placeholder="********">
 
   <div class="botones-container">
-    <button (click)="ingresar()" class="btn-ingresar">Ingresar</button>
-    <button (click)="registrar()" class="btn-registrar">Registrar</button>
+    <button (click)="ingresar()" class="btn-ingresar">
+      <span class="btn-content">
+        <span class="btn-text">Ingresar</span>
+        <span class="btn-icon">→</span>
+      </span>
+    </button>
+    
+    <button (click)="registrar()" class="btn-registrar">
+      <span class="btn-content">
+        <span class="btn-text">Registrar</span>
+        <span class="btn-icon">+</span>
+      </span>
+    </button>
   </div>
 </div>
